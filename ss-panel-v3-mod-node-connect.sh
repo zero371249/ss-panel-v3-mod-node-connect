@@ -1,6 +1,6 @@
 #!/bin/bash
 #Check Root
-[ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
+[ $(id -u) != "0" ] && { echo "Error: 必须使用root用户执行此脚本！"; exit 1; }
 Libtest(){
 	#自动选择下载节点
 	GIT='raw.githubusercontent.com'
@@ -164,7 +164,7 @@ install_node(){
 	echo "#########################################################################"
 	echo
 	#Check Root
-	[ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
+	[ $(id -u) != "0" ] && { echo "Error: 必须使用root用户执行此脚本！"; exit 1; }
 	#check OS version
 	check_sys(){
 		if [[ -f /etc/redhat-release ]]; then
@@ -241,7 +241,7 @@ install_node_db(){
 	echo "#########################################################################"
 	echo
 	#Check Root
-	[ $(id -u) != "0" ] && { echo "Error: 必须使用root用户执行此脚本"; exit 1; }
+	[ $(id -u) != "0" ] && { echo "Error: 必须使用root用户执行此脚本！"; exit 1; }
 	#check OS version
 	check_sys(){
 		if [[ -f /etc/redhat-release ]]; then
@@ -270,11 +270,11 @@ install_node_db(){
 	}
 	# 取消文件数量限制
 	sed -i '$a * hard nofile 512000\n* soft nofile 512000' /etc/security/limits.conf
-	read -p "Please input your MYSQL_HOST: " MYSQL_HOST
-	read -p "Please input your MYSQL_DB: " MYSQL_DB 
-	read -p "Please input your MYSQL_USER: " MYSQL_USER 
-	read -p "Please input your MYSQL_PASS: " MYSQL_PASS 
-	read -p "Please input your Node_ID(like:1): " UserNODE_ID
+	read -p "请输入面板数据库地址: " MYSQL_HOST
+	read -p "请输入面板数据库库名: " MYSQL_DB 
+	read -p "请输入面板数据库用户名: " MYSQL_USER 
+	read -p "请输入面板数据库密码: " MYSQL_PASS 
+	read -p "请输入面板的节点ID(like:7): " UserNODE_ID
 	install_ssr_for_each
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
