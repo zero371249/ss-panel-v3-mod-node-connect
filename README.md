@@ -12,4 +12,5 @@ bash ss-panel-v3-mod-node-connect.sh
 然后输入相应的参数，回车执行，等待脚本安装完毕重启vps后即可成功
 
 原文地址：[https://www.7colorblog.com/?id=32/](sspanelv3魔改后端部署一键脚本)
+
 本人博客：[https://www.7colorblog.com/](https://www.7colorblog.com/)
