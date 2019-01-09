@@ -111,7 +111,7 @@ install_centos_ssr(){
 	#第三次检测是否成功
 	if [ -z "`python -c 'import requests;print(requests)'`" ]; then
 		mkdir python && cd python
-		git clone https://github.com/shazow/urllib3.git && cd urllib3
+		git clone https://github.com/lizhongnian/urllib3.git && cd urllib3
 		python setup.py install && cd ..
 		git clone https://github.com/nakagami/CyMySQL.git && cd CyMySQL
 		python setup.py install && cd ..
@@ -145,7 +145,7 @@ install_ubuntu_ssr(){
 	apt-get install python-pip git -y
 	pip install cymysql
 	cd /root
-	git clone -b manyuser https://github.com/glzjin/shadowsocks.git "/root/shadowsocks"
+	git clone -b master https://github.com/lizhongnian/shadowsocks.git "/root/shadowsocks"
 	cd shadowsocks
 	pip install -r requirements.txt
 	chmod +x *.sh
